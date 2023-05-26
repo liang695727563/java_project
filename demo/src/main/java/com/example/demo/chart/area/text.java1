@@ -1,0 +1,30 @@
+package com.example.demo.chart.area;
+
+public class text {
+    //    回复 [new StackedXYAreaRenderer(XYAreaRenderer.AREA_AND_SHAPES);如何设置区域渐变色]：
+//您可以使用setSeriesPaint()方法为每个数据系列设置绘制颜色。然后，
+// 您可以通过创建GradientPaint对象并将其传递给setPaint()方法来设置渐变色。
+    public static void main(String[] args) {
+        // 创建渐变色
+        Color color1 = new Color(255, 255, 255);
+        Color color2 = new Color(0, 0, 255);
+        GradientPaint gradient = new GradientPaint(0, 0, color1, 0, 1000, color2);
+
+// 设置区域渲染器
+        StackedXYAreaRenderer renderer = new StackedXYAreaRenderer(XYAreaRenderer.AREA_AND_SHAPES);
+
+// 设置第一个数据系列的绘制颜色和渐变色
+        renderer.setSeriesPaint(0, Color.BLUE); // 绘制颜色
+        renderer.setSeriesPaint(0, gradient); // 渐变色
+
+// 设置第二个数据系列的绘制颜色和渐变色
+        renderer.setSeriesPaint(1, Color.RED); // 绘制颜色
+        renderer.setSeriesPaint(1, gradient); // 渐变色
+
+// ...
+        
+    }
+//    在上面的示例中，我们为第一个和第二个数据系列设置了相同的渐变色。
+//    您可以根据需要更改渐变色的起点、终点和中间颜色。
+}
+
