@@ -1,6 +1,7 @@
 package com.example.demo.chart.line;
 
 import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartUtilities;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.axis.CategoryAxis;
 import org.jfree.chart.axis.CategoryLabelPositions;
@@ -17,8 +18,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
 public class Demo1 {
 
@@ -33,7 +32,7 @@ public class Demo1 {
         JFreeChart jFreeChart = createLineChart1("近7日金额(日报)", null, null, dataset);
 
         saveAsFile(jFreeChart, "D://jfreechart//testline.png", 500, 300);
-
+        System.out.println("执行完成！");
 
     }
 
@@ -118,6 +117,8 @@ public class Demo1 {
         // 设置距离图片右端距离
         domainAxis.setUpperMargin(0.0);
 
+
+
         // 纵轴 y
         NumberAxis numberaxis = (NumberAxis) categoryplot.getRangeAxis();
         numberaxis.setLabelFont(labelFont);
@@ -128,9 +129,13 @@ public class Demo1 {
         // 获得renderer 注意这里是下嗍造型到lineandshaperenderer！！
         LineAndShapeRenderer lineandshaperenderer = (LineAndShapeRenderer) categoryplot
                 .getRenderer();
-        lineandshaperenderer.setBaseShapesVisible(true); // series 点（即数据点）可见
-        lineandshaperenderer.setBaseLinesVisible(true); // series 点（即数据点）间有连线可见
+//        lineandshaperenderer.setBaseShapesVisible(true); // series 点（即数据点）可见
+//        lineandshaperenderer.setBaseLinesVisible(true); // series 点（即数据点）间有连线可见
+        lineandshaperenderer.setShapesVisible(true);
 
+        lineandshaperenderer.setDrawOutlines(true);
+
+        lineandshaperenderer.setUseFillPaint(true);
         // 显示折点数据
         lineandshaperenderer
                 .setBaseItemLabelGenerator(new StandardCategoryItemLabelGenerator());
@@ -150,7 +155,7 @@ public class Demo1 {
             }
             out = new FileOutputStream(outputPath);
             // 保存为PNG文件
-//            ChartUtilities.writeChartAsPNG(out, chart, 600, 350);
+            ChartUtilities.writeChartAsPNG(out, chart, 600, 350);
             // 保存为JPEG文件
             //ChartUtilities.writeChartAsJPEG(out, chart, 500, 400);
             out.flush();

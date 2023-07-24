@@ -1,11 +1,15 @@
 package com.example.demo.chart.area;
 
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartUtilities;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.data.xy.XYDataset;
+import org.jfree.data.xy.XYSeries;
+import org.jfree.data.xy.XYSeriesCollection;
+
 import java.io.File;
 import java.io.IOException;
-
-import org.jfree.chart.*;
-import org.jfree.chart.plot.*;
-import org.jfree.data.xy.*;
 
 public class AreaChartExample2 {
 
@@ -21,7 +25,7 @@ public class AreaChartExample2 {
             true,
             false
         );
-        File file = new File("D://jfreechart//area_chart.png");
+        File file = new File("D://jfreechart//area_chart2.png");
         ChartUtilities.saveChartAsPNG(file, chart, 800, 400);
     }
 

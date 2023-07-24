@@ -1,20 +1,20 @@
 package com.example.demo.chart.area;
 
-import java.awt.*;
-import java.io.File;
-import java.io.IOException;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartUtilities;
 import org.jfree.chart.JFreeChart;
-import org.jfree.chart.StandardChartTheme;
 import org.jfree.chart.axis.ValueAxis;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.chart.plot.XYPlot;
 import org.jfree.chart.renderer.xy.StackedXYAreaRenderer;
 import org.jfree.chart.renderer.xy.XYAreaRenderer;
-import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;
 import org.jfree.data.xy.DefaultTableXYDataset;
 import org.jfree.data.xy.XYSeries;
+
+import java.awt.*;
+import java.awt.geom.Ellipse2D;
+import java.io.File;
+import java.io.IOException;
 
 public class StackedXYAreaRendererExample3 {
     public static void main(String[] args) throws IOException {
@@ -34,12 +34,18 @@ public class StackedXYAreaRendererExample3 {
 //        serie1.add(4.0, 5.0);
         dataset.addSeries(serie1);
 
-//        XYSeries serie2 = new XYSeries("Series 2", false,false);
+        XYSeries serie2 = new XYSeries("Series 2", false,false);
 //        serie2.add(0.0, 3.0);
 //        serie2.add(1.0, 2.0);
 //        serie2.add(2.0, 1.0);
 //        serie2.add(3.0, 5.0);
 //        serie2.add(4.0, 2.0);
+
+//        serie2.add(0.0, 1.0);
+//        serie2.add(1.0, 3.0);
+//        serie2.add(2.0, 4.0);
+//        serie2.add(3.0, 2.0);
+//        serie2.add(4.0, 5.0);
 //        dataset.addSeries(serie2);
 
         // 创建一个 JFreeChart 折线图对象
@@ -87,17 +93,21 @@ public class StackedXYAreaRendererExample3 {
         // 设置第一个数据系列的绘制颜色和渐变色
 //        renderer.setSeriesPaint(0, Color.BLUE); // 绘制颜色
 
-        renderer.setOutline(true);
-//        renderer.setSeriesPaint(0, new Color(255,214,192));//图形前景
+//        renderer.setOutline(true);
+        renderer.setSeriesPaint(0, new Color(255,214,192));//图形前景
         renderer.setSeriesPaint(0, gradient); // 渐变色
-
-        renderer.setSeriesOutlinePaint(0,new Color(252,69,0));
+//        renderer.setUseFillPaint(false);
+////        renderer.setOutlinePaint(Color.black);
+//        renderer.setSeriesOutlinePaint(0,new Color(252,69,0));
         renderer.setSeriesOutlineStroke(0, new BasicStroke(10));
+        renderer.setSeriesShape(0, new Ellipse2D.Double(-3, -3, 10, 10));
+        renderer.setSeriesShape(1, new Ellipse2D.Double(-3, -3, 10, 10));
+        renderer.setSeriesShape(2, new Ellipse2D.Double(-3, -3, 10, 10));
+        renderer.setSeriesShape(3, new Ellipse2D.Double(-3, -3, 10, 10));
 
-//        plot.setOutlinePaint(Color.TRANSPARENT); // 设置外边框线条颜色为透明
-//        plot.setDomainGridlinePaint(Color.BLACK); // 设置内部竖线条颜色
-//        plot.setRangeGridlinePaint(Color.BLACK); // 设置内部横线条颜色
-
+        plot.setBackgroundPaint(null); // 去除背景
+        plot.setOutlinePaint(null); // 去除边框
+        plot.setForegroundAlpha(1f);//前影透明
         plot.setRenderer(renderer);
 
 

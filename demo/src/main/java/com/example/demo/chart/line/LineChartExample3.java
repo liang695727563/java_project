@@ -1,11 +1,7 @@
 package com.example.demo.chart.line;
 
-import java.awt.*;
-import java.io.File;
-import java.io.IOException;
-
 import org.jfree.chart.ChartFactory;
-//import org.jfree.chart.ChartUtilities;
+import org.jfree.chart.ChartUtilities;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.axis.NumberAxis;
 import org.jfree.chart.plot.PlotOrientation;
@@ -13,6 +9,10 @@ import org.jfree.chart.plot.XYPlot;
 import org.jfree.chart.renderer.xy.XYAreaRenderer;
 import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;
 import org.jfree.data.xy.DefaultXYDataset;
+
+import java.awt.*;
+import java.io.File;
+import java.io.IOException;
 
 public class LineChartExample3 {
     public static void main(String[] args) throws IOException {
@@ -70,6 +70,6 @@ public class LineChartExample3 {
         plot.setRenderer(renderer);
 
         // 保存图表为PNG图片
-//        ChartUtilities.saveChartAsPNG(new File("D:\\test\\linechart.png"), chart, 400, 300);
+        ChartUtilities.saveChartAsPNG(new File("D:\\test\\linechart.png"), chart, 400, 300);
     }
 }

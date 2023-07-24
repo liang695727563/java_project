@@ -1,9 +1,5 @@
 package com.example.demo.chart.area;
 
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Font;
-
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
@@ -18,10 +14,11 @@ import org.jfree.data.general.DatasetUtilities;
 import org.jfree.ui.ApplicationFrame;
 import org.jfree.ui.RectangleEdge;
 import org.jfree.ui.RefineryUtilities;
-//import org.jfree.ui.Spacer;
 import org.jfree.ui.VerticalAlignment;
 import org.jfree.util.Log;
 import org.jfree.util.PrintStreamLogTarget;
+
+import java.awt.*;
 
 /**
  * A simple demonstration application showing how to create an area chart using data from a
@@ -60,9 +57,9 @@ public class AreaChartDemo extends ApplicationFrame {
 //********************************************************************
     /**
      * Creates a chart.
-     *
+     * 
      * @param dataset  the dataset.
-     *
+     * 
      * @return The chart.
      */
     private JFreeChart createChart(final CategoryDataset dataset) {
