@@ -1,0 +1,9 @@
+<configuration>
+
+
+<mapppers>
+  <!--  <mapper resource="mapper/labor/loginMapper.xml"/>-->
+    <mapper resource="zheng/lk/mapper"/>
+</mapppers>
+
+</configuration>

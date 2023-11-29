@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql:///crucical?useSSL=false&serverTimezone=UTC
+    username: root
+    password: 666666
+
+
+
+mybatis-plus:
+  # 实体类扫描路径
+  type-aliases-package: zheng.lk.enter
+  # xml 扫描路径
+  mapper-locations: classpth:/mapper/*.xml
+  #开启了与数据列的驼峰映射  从经典数据库列名 A_COLUMN 映射到经典 Java 属性名 aColumn
+  configuration:
+    map-underscore-to-camel-case: true
+    #开启sql语句输出(日志)
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
