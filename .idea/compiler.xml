@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="rockermq" />
+        <module name="echart" />
+        <module name="demo" />
+        <module name="jfreechart" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="8">
+      <module name="demo" target="1.8" />
+      <module name="echart" target="1.8" />
+      <module name="jfreechart" target="1.8" />
+      <module name="rockermq" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="demo" options="-parameters" />
+      <module name="echart" options="-parameters" />
+      <module name="jfreechart" options="-parameters" />
+      <module name="rockermq" options="-parameters" />
+    </option>
+  </component>
+</project>

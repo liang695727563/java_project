@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.icepear.echarts:echarts-java:1.0.7">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../repository/org/icepear/echarts/echarts-java/1.0.7/echarts-java-1.0.7.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../repository/org/icepear/echarts/echarts-java/1.0.7/echarts-java-1.0.7-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../repository/org/icepear/echarts/echarts-java/1.0.7/echarts-java-1.0.7-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
